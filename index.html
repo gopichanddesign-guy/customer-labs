@@ -13,6 +13,10 @@
 
 <!-- Hero -->
 <header class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-bg.png" aria-hidden="true">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-glow" aria-hidden="true"></div>
   <nav class="nav">
     <a class="brand" href="#top" aria-label="Customer Labs home">
       <img src="assets/logo.png" width="32" height="33" alt="">
@@ -122,7 +126,7 @@
         <div class="bento-col bento-left">
           <article class="t-card t-grow">
             <div class="t-top">
-              <div class="t-metric"><strong>3.2X</strong><span>Increase in ROAS</span></div>
+              <div class="t-metric"><strong data-count="3.2" data-suffix="X">3.2X</strong><span>Increase in ROAS</span></div>
               <div class="t-quote">
                 <h3>First-Party Data Powering Profitable Ad Spend</h3>
                 <p>After switching to CustomerLabs for server-side tracking and first-party audience activation, our Meta and Google campaigns consistently deliver higher returns. We no longer lose critical conversion signals to browser restrictions.</p>
@@ -136,7 +140,7 @@
 
           <article class="t-card t-grow">
             <div class="t-top">
-              <div class="t-metric"><strong>68%</strong><span>Audience match-rate improvement</span></div>
+              <div class="t-metric"><strong data-count="68" data-suffix="%">68%</strong><span>Audience match-rate improvement</span></div>
               <div class="t-quote">
                 <h3>From Guesswork to Precision Targeting</h3>
                 <p>CustomerLabs unified our fragmented user data and activated high-intent segments directly in our ad platforms. Our audience match rates jumped from under 30% to over 68%, dramatically improving campaign efficiency.</p>
@@ -152,7 +156,7 @@
         <div class="bento-col">
           <article class="t-card t-fixed">
             <div class="t-top">
-              <div class="t-metric"><strong>42%</strong><span>Reduction in customer acquisition cost</span></div>
+              <div class="t-metric"><strong data-count="42" data-suffix="%">42%</strong><span>Reduction in customer acquisition cost</span></div>
               <div class="t-quote">
                 <h3>Cutting Acquisition Costs With Smarter Data</h3>
                 <p>CustomerLabs helped us build precise first-party audiences and sync them to Meta and Google in real time. Our cost per acquisition dropped significantly while conversion volume kept growing.</p>
@@ -167,7 +171,7 @@
           <div class="bento-split">
             <article class="t-card t-small">
               <div class="t-quote">
-                <div class="t-metric"><strong>2.4X</strong><span>Conversion rate improvement</span></div>
+                <div class="t-metric"><strong data-count="2.4" data-suffix="X">2.4X</strong><span>Conversion rate improvement</span></div>
                 <p>Server-side tracking through CustomerLabs recovered the conversion events we were losing to ad blockers and iOS restrictions. Our retargeting finally works again.</p>
               </div>
               <footer class="t-foot">
@@ -176,7 +180,7 @@
             </article>
             <article class="t-card t-small">
               <div class="t-quote">
-                <div class="t-metric"><strong>56%</strong><span>Revenue growth from paid channels</span></div>
+                <div class="t-metric"><strong data-count="56" data-suffix="%">56%</strong><span>Revenue growth from paid channels</span></div>
                 <p>CustomerLabs gave us a unified view of customer journeys and activated those segments across all our ad platforms. Revenue from paid channels grew meaningfully within two quarters.</p>
               </div>
               <footer class="t-foot">
@@ -187,7 +191,7 @@
 
           <article class="t-card">
             <div class="t-top">
-              <div class="t-metric"><strong>4.1X</strong><span>Return on ad spend with first-party data</span></div>
+              <div class="t-metric"><strong data-count="4.1" data-suffix="X">4.1X</strong><span>Return on ad spend with first-party data</span></div>
               <div class="t-quote">
                 <h3>The Missing Link Between Data and Revenue</h3>
                 <p>Before CustomerLabs, we were flying blind — losing event data to cookie deprecation and privacy changes. Now our first-party data flows directly to ad platforms, and the results speak for themselves. Campaign performance improved across every channel.</p>
@@ -202,8 +206,8 @@
       </div>
 
       <div class="grid-footer">
-        <p>1500+ satisfied clients love our services</p>
-        <div class="rating"><img src="assets/stars.png" width="86" height="14" alt="5 out of 5 stars"><span><b>4.9</b> Based on 13k reviews</span></div>
+        <p><span data-count="1500" data-suffix="+">1500+</span> satisfied clients love our services</p>
+        <div class="rating"><img src="assets/stars.png" width="86" height="14" alt="5 out of 5 stars"><span><b data-count="4.9" data-suffix="">4.9</b> Based on 13k reviews</span></div>
         <a class="btn btn-ghost btn-g2" href="https://www.g2.com/search?query=CustomerLabs" target="_blank" rel="noopener">Read All Reviews On G2
           <svg width="28.8" height="28.8" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"/></svg>
         </a>
@@ -213,6 +217,7 @@
 
   <!-- CTA -->
   <section class="cta">
+    <div class="cta-beam" aria-hidden="true"></div>
     <div class="container">
       <div class="cta-copy">
         <p class="eyebrow">READY TO PUT YOUR DATA TO WORK?</p>
