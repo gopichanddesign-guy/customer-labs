@@ -28,7 +28,6 @@
   --t-gradient: linear-gradient(180.5deg, #02221e 27.85%, #000000 146.46%);
 
   --font: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-btn: "DM Sans", "Outfit", system-ui, sans-serif;
 
   --container: 1224px;
   --gutter: clamp(16px, 7.5vw, 108px);
@@ -63,26 +62,27 @@ body.modal-open { overflow: hidden; }
 
 /* ---------- Buttons ---------- */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 4.8px;
-  padding: 12px 16.8px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px;
+  padding: 12px 24px;
   border-radius: 12px;
   border: 1.2px solid transparent;
   font-family: var(--font); font-weight: 600;
-  font-size: 16.8px; line-height: 24px; letter-spacing: -0.1px;
+  font-size: 16px; line-height: 24px; letter-spacing: 0.1px;
   color: var(--white);
   white-space: nowrap;
-  transition: background-color .2s, border-color .2s, transform .2s;
+  transition: background-color .2s, border-color .2s, transform .2s, box-shadow .2s;
 }
 .btn:hover { transform: translateY(-1px); }
 .btn-primary { background: var(--orange); }
 .btn-primary:hover { background: var(--orange-hover); }
-.btn-ghost { background: var(--btn-ghost-bg); border-color: var(--btn-ghost-border); font-family: var(--font-btn); font-weight: 500; }
+.btn-ghost { background: var(--btn-ghost-bg); border-color: var(--btn-ghost-border); font-weight: 500; }
 .btn-ghost:hover { border-color: #4a4a4a; }
-.btn-hero { width: 172px; }
-.btn-nav { font-family: var(--font-btn); font-weight: 500; font-size: 20.16px; line-height: 28.8px; padding: 9.6px 12px; width: 138px; }
-.btn-dm { font-family: var(--font-btn); }
+.btn-hero { min-width: 172px; }
+.btn-nav { min-height: 44px; padding: 10px 22px; font-size: 16px; }
 .btn-block { width: 100%; font-weight: 500; }
-.btn-g2 { font-size: 20.16px; line-height: 28.8px; padding: 12px 12px 12px 16.8px; }
+.btn-g2 { padding: 12px 18px 12px 24px; }
+.btn-g2 svg { width: 22px; height: 22px; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -335,7 +335,7 @@ body.modal-open { overflow: hidden; }
   .nav { height: 64px; }
   .nav-links { display: none; }
   .brand { font-size: 18px; }
-  .btn-nav { width: auto; font-size: 16px; line-height: 24px; padding: 8px 14px; }
+  .btn-nav { min-height: 40px; padding: 8px 16px; font-size: 15px; }
   .hero-content { padding-block: 120px 220px; }
   .hero h1 { font-size: 38px; line-height: 46px; letter-spacing: -1px; }
   .lead { font-size: 16px; line-height: 26px; }
@@ -354,7 +354,6 @@ body.modal-open { overflow: hidden; }
   .t-quote h3 { font-size: 20px; }
   .t-quote p { font-size: 16px; line-height: 24px; }
   .grid-footer { flex-direction: column; align-items: flex-start; }
-  .btn-g2 { font-size: 16px; }
   .cta { padding-block: 64px 240px; background-size: auto 55%; }
   .footer-inner { flex-direction: column-reverse; padding-block: 24px; }
   .footer-left { flex-direction: column; gap: 20px; }
@@ -403,7 +402,7 @@ body.modal-open { overflow: hidden; }
 /* Button shimmer + glow */
 .btn { position: relative; overflow: hidden; isolation: isolate; }
 .btn-primary::after {
-  content: ""; position: absolute; inset: -2px; z-index: -1;
+  content: ""; position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, .45) 50%, transparent 75%);
   transform: translateX(-120%);
   animation: sweep 3.2s ease-in-out infinite;
