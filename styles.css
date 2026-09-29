@@ -373,6 +373,7 @@ body.modal-open { overflow: hidden; }
   pointer-events: none;
 }
 .hero-video.is-playing { opacity: 0.6; }
+.hero.has-video { background-image: none; }
 .hero-glow {
   position: absolute; left: 50%; bottom: -30%;
   width: 90%; aspect-ratio: 2 / 1; max-width: 1400px;

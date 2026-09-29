@@ -112,7 +112,10 @@
   // the poster (a render of the Figma frame) shows until then.
   const video = document.querySelector('.hero-video');
   if (video) {
-    video.addEventListener('playing', () => video.classList.add('is-playing'));
+    video.addEventListener('playing', () => {
+      video.classList.add('is-playing');
+      video.closest('.hero').classList.add('has-video');
+    });
     if (reduce) video.removeAttribute('autoplay'), video.pause();
   }
 
