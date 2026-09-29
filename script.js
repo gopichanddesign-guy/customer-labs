@@ -8,6 +8,7 @@
 
   function openDemo() {
     lastFocus = document.activeElement;
+    resetForm();
     form.hidden = false;
     success.hidden = true;
     modal.hidden = false;
@@ -15,7 +16,18 @@
     document.getElementById('f-name').focus();
   }
 
+  // Clear typed values and error messages so the form always opens fresh.
+  function resetForm() {
+    form.reset();
+    form.querySelectorAll('.field').forEach((field) => {
+      field.classList.remove('has-error');
+      const err = field.querySelector('.error');
+      if (err) err.textContent = '';
+    });
+  }
+
   function closeDemo() {
+    resetForm();
     modal.hidden = true;
     document.body.classList.remove('modal-open');
     if (lastFocus) lastFocus.focus();
@@ -55,7 +67,7 @@
 
   Object.keys(rules).forEach((id) => {
     const input = document.getElementById(id);
-    input.addEventListener('blur', () => input.value && check(id));
+    input.addEventListener('blur', () => !modal.hidden && input.value && check(id));
     input.addEventListener('input', () => {
       if (input.closest('.field').classList.contains('has-error')) check(id);
     });
