@@ -128,7 +128,29 @@
       video.classList.add('is-playing');
       video.closest('.hero').classList.add('has-video');
     });
-    if (reduce) video.removeAttribute('autoplay'), video.pause();
+    // Phones only autoplay a video that is muted inline, so set both as
+    // properties too. If the browser still blocks autoplay (e.g. iOS Low
+    // Power Mode), start it on the visitor's first touch or scroll.
+    // Phones get a lighter, lower-resolution encode of the same video.
+    const source = video.querySelector('source[data-src-mobile]');
+    if (source && window.matchMedia('(max-width: 760px)').matches) {
+      source.src = source.dataset.srcMobile;
+      video.load();
+    }
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    const tryPlay = () => {
+      const p = video.play();
+      if (p && p.catch) p.catch(() => {});
+    };
+    const kick = () => {
+      tryPlay();
+      ['touchstart', 'pointerdown', 'scroll', 'keydown'].forEach((ev) => window.removeEventListener(ev, kick));
+    };
+    tryPlay();
+    ['touchstart', 'pointerdown', 'scroll', 'keydown'].forEach((ev) => window.addEventListener(ev, kick, { passive: true }));
+    document.addEventListener('visibilitychange', () => { if (!document.hidden && video.paused) tryPlay(); });
   }
 
   // Client logos: duplicate once and scroll as an endless marquee.
